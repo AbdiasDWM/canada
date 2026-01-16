@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Immigration Canada – HorizonVisa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Style du bouton */
+    .btn-retour {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px; /* espace entre icône et texte */
+        padding: 10px 18px;
+        background-color: #007BFF; /* bleu */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: sans-serif;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-retour:hover {
+        background-color: #0056b3; /* bleu plus foncé au hover */
+        transform: translateX(-2px); /* petit effet de mouvement */
+    }
+
+    .btn-retour i {
+        font-style: normal; /* pour utiliser le caractère comme icône */
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body class="bg-gray-50">
+
+<!-- HEADER -->
+<header class="bg-[#D52B1E] text-white py-6">
+  <div class="container mx-auto px-4">
+     <!-- Bouton retour -->
+
+     
+    <h1 class="text-3xl font-extrabold">Études à l'étranger🇨🇦</h1>
+    <p class="opacity-90">Évaluation complète de votre admissibilité</p>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<section class="py-12">
+  <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12">
+
+    <!-- INFO -->
+    <div>
+      <h2 class="text-2xl font-bold mb-4">Ce que comprend ce service</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li>✔ Analyse complète de votre profil</li>
+        <li>✔ Étude Entrée Express / PNP</li>
+        <li>✔ Conseils personnalisés</li>
+        <li>✔ Rapport PDF détaillé</li>
+      </ul>
+
+      <div class="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+        <strong>Frais de traitement :</strong>
+        <span class="text-[#D52B1E] font-bold text-xl">250 USD</span>
+        <p class="text-sm text-gray-600 mt-1">
+          Non remboursable – paiement requis avant l’analyse
+        </p>
+      </div>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="bg-white p-8 rounded-xl shadow">
+
+      <h3 class="text-xl font-bold mb-6">Formulaire d’évaluation</h3>
+
+     <form
+  id="serviceForm"
+  action="https://formspree.io/f/mgoovrrk"
+  method="POST"
+  class="space-y-5"
+>
+
+  <!-- IDENTITÉ -->
+  <div>
+    <label class="block font-medium">Nom complet</label>
+    <input name="nom" required class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <div>
+    <label class="block font-medium">Email</label>
+    <input type="email" name="email" required class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <div>
+    <label class="block font-medium">Téléphone</label>
+    <input name="telephone" required class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <div>
+    <label class="block font-medium">Pays de résidence</label>
+    <input name="pays_residence" class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <div>
+    <label class="block font-medium">Adresse complète</label>
+    <input name="adresse" placeholder="Ville, Quartier, Rue" class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <!-- PROJET D'ÉTUDES -->
+  <div>
+    <label class="block font-medium">Pays souhaité pour les études</label>
+    <select name="pays_etude" class="w-full border rounded-lg px-4 py-2">
+      <option>Canada</option>
+      <option>France</option>
+      <option>Allemagne</option>
+      <option>États-Unis</option>
+      <option>Royaume-Uni</option>
+      <option>Autre</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="block font-medium">Domaine d’études souhaité</label>
+    <input name="domaine" class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <div>
+    <label class="block font-medium">Type d’établissement</label>
+    <select name="etablissement" class="w-full border rounded-lg px-4 py-2">
+      <option>Université</option>
+      <option>École privée</option>
+      <option>Institut technique</option>
+      <option>Collège</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="block font-medium">Année de départ souhaitée</label>
+    <input type="month" name="annee_depart" class="w-full border rounded-lg px-4 py-2">
+  </div>
+
+  <div>
+    <label class="block font-medium">Niveau de langue</label>
+    <select name="niveau_langue" class="w-full border rounded-lg px-4 py-2">
+      <option>Débutant</option>
+      <option>Intermédiaire</option>
+      <option>Avancé</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="block font-medium">Passeport valide ?</label>
+    <select name="passeport" class="w-full border rounded-lg px-4 py-2">
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="block font-medium">Situation actuelle</label>
+    <select name="situation" class="w-full border rounded-lg px-4 py-2">
+      <option>Étudiant</option>
+      <option>Employé</option>
+      <option>Sans emploi</option>
+      <option>Entrepreneur</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="block font-medium">Informations complémentaires</label>
+    <textarea
+      name="message"
+      rows="4"
+      class="w-full border rounded-lg px-4 py-2"
+      placeholder="Expliquez votre projet, contraintes, budget, etc."
+    ></textarea>
+  </div>
+
+  <!-- DONNÉES FIXES -->
+  <input type="hidden" name="service" value="Études à l’étranger">
+  <input type="hidden" name="montant" value="250 USD">
+
+  <!-- CODE DE VALIDATION -->
+  <div class="mt-6">
+    <label class="block font-medium mb-1">
+      Code de validation (4 chiffres)
+    </label>
+
+    <input
+      id="codeValidation"
+      type="password"
+      maxlength="4"
+      inputmode="numeric"
+      class="w-full border rounded-lg px-4 py-3 text-center tracking-widest text-xl"
+      placeholder="••••"
+      required
+    >
+
+    <p id="codeError" class="text-red-600 text-sm mt-2 hidden">
+      Code incorrect. Veuillez effectuer le paiement requis.
+    </p>
+  </div>
+
+</form>
+
+</div>
+<script>
+  const codeInput = document.getElementById("codeValidation");
+  const form = document.getElementById("serviceForm");
+  const errorMsg = document.getElementById("codeError");
+
+  codeInput.addEventListener("input", () => {
+    if (codeInput.value.length === 4) {
+      if (codeInput.value === "1223") {
+        errorMsg.classList.add("hidden");
+        form.submit();
+      } else {
+        errorMsg.classList.remove("hidden");
+        codeInput.value = "";
+        codeInput.focus();
+      }
+    }
+  });
+</script>
+<button
+  id="btnBack"
+  aria-label="Retour à la page précédente"
+  class="fixed bottom-6 left-6 z-50 bg-[#D52B1E] text-white p-4 rounded-full shadow-lg hover:bg-[#B91C1C] transition"
+>
+  ←
+</button>
+<script>
+  document.getElementById("btnBack").addEventListener("click", () => {
+    window.history.back();
+  });
+</script>
